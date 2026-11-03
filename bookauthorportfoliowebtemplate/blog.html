@@ -1,0 +1,429 @@
+<!DOCTYPE HTML>
+<!-- Website Template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Mini Game - Our Anniversary Website</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<style>
+		/* Game Section Container Styling */
+		.game-card {
+			position: relative;
+			width: 100%;
+			max-width: 520px;
+			height: 440px;
+			margin: 0 auto;
+			background: #ffffff;
+			border: 2px dashed #f48fb1;
+			border-radius: 16px;
+			overflow: hidden;
+			font-family: Georgia, serif;
+			box-sizing: border-box;
+			user-select: none;
+			box-shadow: 0 4px 12px rgba(184, 59, 94, 0.08);
+		}
+
+		.game-header {
+			padding: 12px 15px;
+			text-align: center;
+			background-color: #fbe3ea;
+			border-bottom: 2px solid #f48fb1;
+		}
+
+		.game-title {
+			margin: 0;
+			color: #800d35;
+			font-size: 1.2rem;
+			font-weight: bold;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+		}
+
+		.game-stats {
+			display: flex;
+			justify-content: space-around;
+			margin-top: 6px;
+			color: #7b4355;
+			font-size: 0.95rem;
+			font-weight: bold;
+		}
+
+		.game-arena {
+			position: relative;
+			width: 100%;
+			height: calc(100% - 70px);
+			cursor: pointer;
+			background-color: #fff8f9;
+			overflow: hidden;
+			transition: background-color 0.2s ease;
+		}
+
+		.game-arena.penalty-flash {
+			background-color: #ffcdd2;
+		}
+
+		/* Overlay Screen for Start / Win / Retry */
+		.game-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(253, 246, 247, 0.95);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			z-index: 10;
+			text-align: center;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+
+		.game-overlay h3 {
+			margin: 0 0 8px 0;
+			color: #800d35;
+			font-size: 1.4rem;
+			font-family: Georgia, serif;
+		}
+
+		.game-overlay p {
+			margin: 0 0 14px 0;
+			color: #7b4355;
+			font-size: 0.95rem;
+			line-height: 1.4;
+			max-width: 380px;
+		}
+
+		/* Difficulty Buttons */
+		.difficulty-container {
+			display: flex;
+			gap: 8px;
+			margin-bottom: 16px;
+		}
+
+		.diff-btn {
+			background: #ffffff;
+			border: 1px solid #f48fb1;
+			color: #800d35;
+			padding: 6px 14px;
+			border-radius: 12px;
+			cursor: pointer;
+			font-size: 0.85rem;
+			font-family: Georgia, serif;
+			font-weight: bold;
+			transition: all 0.2s ease;
+		}
+
+		.diff-btn.active, .diff-btn:hover {
+			background: #d81b60;
+			color: #ffffff;
+			border-color: #d81b60;
+		}
+
+		.start-btn {
+			background: #d81b60;
+			color: #fff;
+			border: none;
+			padding: 10px 24px;
+			font-size: 0.95rem;
+			border-radius: 20px;
+			cursor: pointer;
+			font-weight: bold;
+			font-family: Georgia, serif;
+			transition: background 0.2s ease, transform 0.1s ease;
+			box-shadow: 0 4px 10px rgba(216, 27, 96, 0.3);
+		}
+
+		.start-btn:hover {
+			background: #ad1457;
+			transform: scale(1.04);
+		}
+
+		/* Floating Elements */
+		.floating-item {
+			position: absolute;
+			font-size: 2rem;
+			line-height: 1;
+			cursor: pointer;
+			z-index: 5;
+		}
+
+		@keyframes floatUp {
+			0% {
+				transform: translateY(370px) scale(0.8) rotate(0deg);
+				opacity: 1;
+			}
+			100% {
+				transform: translateY(-50px) scale(1.1) rotate(20deg);
+				opacity: 0.85;
+			}
+		}
+
+		/* Sidebar Custom Styling */
+		#body .sidebar h3 {
+			color: #800d35;
+			font-family: "Times New Roman", Times, serif;
+			font-size: 18px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin-bottom: 12px;
+		}
+
+		#body .sidebar ul li {
+			color: #7b4355;
+			font-size: 13px;
+			line-height: 20px;
+			margin-bottom: 8px;
+		}
+	</style>
+</head>
+<body>
+	<div id="page">
+		<div id="header">
+			<a href="index.html" class="logo"><img src="images/logo.png" alt="Logo"></a>
+			<div class="navigation">
+				<ul class="primary">
+					<li>
+						<a href="index.html">home</a>
+					</li>
+					<li>
+						<a href="about.html">us</a>
+					</li>
+				</ul>
+				<ul class="secondary">
+					<li>
+						<a href="books.html">memories</a>
+					</li>
+					<li class="selected">
+						<a href="blog.html">game</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="body">
+			<div class="content">
+				<div class="main-text">
+					<!-- CATCH MY HEART INTERACTIVE GAME CONTAINER -->
+					<div class="game-card">
+						<div class="game-header">
+							<h3 class="game-title">Catch My Heart 💖</h3>
+							<div class="game-stats">
+								<span>Score: <span id="score-text">0</span> / <span id="target-text">10</span></span>
+								<span>Time: <span id="timer-text">15</span>s</span>
+							</div>
+						</div>
+
+						<div class="game-arena" id="game-arena">
+							<!-- Overlay Screen for Start / Win / Retry -->
+							<div class="game-overlay" id="game-overlay">
+								<h3 id="overlay-title">Catch The Hearts!</h3>
+								<p id="overlay-desc">Catch pink hearts for points, but avoid 🖤 black hearts & 💀 skulls!</p>
+								
+								<div class="difficulty-container">
+									<button class="diff-btn active" onclick="setDifficulty('easy')">Easy</button>
+									<button class="diff-btn" onclick="setDifficulty('medium')">Medium</button>
+									<button class="diff-btn" onclick="setDifficulty('hard')">Hard</button>
+								</div>
+
+								<button class="start-btn" id="start-btn" onclick="startGame()">Start Game</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- RIGHT SIDEBAR PANEL -->
+				<div class="sidebar">
+					<h3>How to Play</h3>
+					<ul>
+						<li>💖 <b>Pink Hearts:</b> +1 Point</li>
+						<li>🖤 <b>Black Heart / 💀 Skull:</b> -1 Point!</li>
+						<li>Choose difficulty and reach target score before time runs out!</li>
+					</ul>
+					
+					<h3 style="margin-top: 30px;">Difficulty Specs</h3>
+					<ul>
+						<li><b>Easy:</b> 10 Hearts / 15s</li>
+						<li><b>Medium:</b> 12 Hearts / 12s</li>
+						<li><b>Hard:</b> 15 Hearts / 10s</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<ul>
+				<li class="twitter">
+					<a href="http://freewebsitetemplates.com/go/twitter/">twitter</a>
+				</li>
+				<li class="facebook">
+					<a href="http://freewebsitetemplates.com/go/facebook/">facebook</a>
+				</li>
+				<li class="googleplus">
+					<a href="http://freewebsitetemplates.com/go/googleplus/">googleplus</a>
+				</li>
+			</ul>
+			<p>
+				&copy; Copyright 2026. All rights reserved
+			</p>
+		</div>
+	</div>
+
+	<!-- GAME LOGIC SCRIPT -->
+	<script>
+		let score = 0;
+		let timeLeft = 15;
+		let targetScore = 10;
+		let gameInterval = null;
+		let spawnInterval = null;
+		let isPlaying = false;
+		let currentDiff = 'easy';
+
+		// Difficulty Configurations
+		const config = {
+			easy:   { time: 15, target: 10, speed: 3.5, spawnRate: 600, fakeChance: 0.2 },
+			medium: { time: 12, target: 12, speed: 2.8, spawnRate: 500, fakeChance: 0.35 },
+			hard:   { time: 10, target: 15, speed: 2.2, spawnRate: 400, fakeChance: 0.5 }
+		};
+
+		const arena = document.getElementById('game-arena');
+		const overlay = document.getElementById('game-overlay');
+		const overlayTitle = document.getElementById('overlay-title');
+		const overlayDesc = document.getElementById('overlay-desc');
+		const startBtn = document.getElementById('start-btn');
+		const scoreText = document.getElementById('score-text');
+		const targetText = document.getElementById('target-text');
+		const timerText = document.getElementById('timer-text');
+
+		function setDifficulty(diff) {
+			currentDiff = diff;
+			document.querySelectorAll('.diff-btn').forEach(btn => btn.classList.remove('active'));
+			event.target.classList.add('active');
+
+			const c = config[diff];
+			targetText.innerText = c.target;
+			timerText.innerText = c.time;
+		}
+
+		function startGame() {
+			const c = config[currentDiff];
+			score = 0;
+			timeLeft = c.time;
+			targetScore = c.target;
+			isPlaying = true;
+
+			scoreText.innerText = score;
+			targetText.innerText = targetScore;
+			timerText.innerText = timeLeft;
+
+			overlay.style.display = 'none';
+
+			// Clear existing floating items
+			document.querySelectorAll('.floating-item').forEach(h => h.remove());
+
+			// Timer Countdown
+			gameInterval = setInterval(() => {
+				timeLeft--;
+				timerText.innerText = timeLeft;
+
+				if (timeLeft <= 0) {
+					endGame(false);
+				}
+			}, 1000);
+
+			// Spawn Loop
+			spawnInterval = setInterval(spawnItem, c.spawnRate);
+		}
+
+		function spawnItem() {
+			if (!isPlaying) return;
+
+			const c = config[currentDiff];
+			const item = document.createElement('div');
+			item.classList.add('floating-item');
+			
+			// Decide if Good Heart or Fake/Penalty Item
+			const isFake = Math.random() < c.fakeChance;
+			if (isFake) {
+				const fakes = ['🖤', '💀', '💔'];
+				item.innerText = fakes[Math.floor(Math.random() * fakes.length)];
+				item.dataset.type = 'fake';
+			} else {
+				const hearts = ['💖', '💕', '💗', '❤️', '🌸'];
+				item.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+				item.dataset.type = 'good';
+			}
+
+			// Animation Speed & Position
+			item.style.animation = `floatUp ${c.speed}s linear forwards`;
+			const arenaWidth = arena.clientWidth - 40;
+			const randomX = Math.max(10, Math.floor(Math.random() * arenaWidth));
+			item.style.left = randomX + 'px';
+
+			// Click / Tap Handler
+			item.addEventListener('mousedown', (e) => handleItemClick(e, item));
+			item.addEventListener('touchstart', (e) => {
+				e.preventDefault();
+				handleItemClick(e, item);
+			});
+
+			arena.appendChild(item);
+
+			// Auto remove
+			setTimeout(() => {
+				if (item.parentNode) {
+					item.remove();
+				}
+			}, c.speed * 1000);
+		}
+
+		function handleItemClick(e, item) {
+			if (!isPlaying) return;
+
+			const isFake = item.dataset.type === 'fake';
+
+			if (isFake) {
+				score = Math.max(0, score - 1); // Deduct point (min 0)
+				
+				// Red Flash Effect on Penalty
+				arena.classList.add('penalty-flash');
+				setTimeout(() => arena.classList.remove('penalty-flash'), 200);
+			} else {
+				score++;
+			}
+
+			scoreText.innerText = score;
+
+			// Visual Feedback
+			item.style.transform = isFake ? 'scale(1.5) rotate(180deg)' : 'scale(1.5)';
+			item.style.opacity = '0';
+			item.style.transition = 'transform 0.15s ease, opacity 0.15s ease';
+
+			setTimeout(() => item.remove(), 150);
+
+			// Check Win Condition
+			if (score >= targetScore) {
+				endGame(true);
+			}
+		}
+
+		function endGame(isWin) {
+			isPlaying = false;
+			clearInterval(gameInterval);
+			clearInterval(spawnInterval);
+
+			document.querySelectorAll('.floating-item').forEach(h => h.remove());
+			overlay.style.display = 'flex';
+
+			if (isWin) {
+				overlayTitle.innerText = "YOU CAUGHT MY HEART! 🎉";
+				overlayDesc.innerText = `Awesome job on ${currentDiff.toUpperCase()} mode! You caught all ${targetScore} hearts! Happy 1st Anniversary! ❤️`;
+				startBtn.innerText = "Play Again";
+			} else {
+				overlayTitle.innerText = "Time's Up! ⏰";
+				overlayDesc.innerText = `You scored ${score}/${targetScore} on ${currentDiff.toUpperCase()} mode. Avoid those black hearts and try again!`;
+				startBtn.innerText = "Try Again";
+			}
+		}
+	</script>
+</body>
+</html>

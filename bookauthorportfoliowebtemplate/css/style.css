@@ -1,0 +1,474 @@
+/* Website Template - Pink Anniversary Theme */
+body {
+	background: #fdf6f7 url(../images/bg-body.gif) repeat center top;
+	font-family: Georgia, serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+}
+#page {
+	margin: 0 auto;
+	padding: 0;
+	width: 960px;
+}
+#header {
+	background: url(../images/bg-header.png) no-repeat bottom center;
+	height: 188px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+#header div.navigation {
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+}
+#header a.logo {
+	display: block;
+	position: absolute;
+	top: 60px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 10;
+	width: auto;
+	height: auto;
+}
+#header a.logo img {
+	border: 0;
+	display: block;
+	max-width: 180px;
+	height: auto;
+}
+#header div.navigation ul {
+	margin: 0;
+	overflow: hidden;
+}
+#header div.navigation ul.primary {
+	float: left;
+	padding: 128px 0 0 150px;
+	width: 330px;
+}
+#header div.navigation ul.secondary {
+	float: left;
+	padding: 128px 0 0 110px;
+	width: 370px;
+}
+#header div.navigation ul li {
+	float: left;
+	list-style: none;
+	margin: 0 20px 0 0;
+	width: 100px;
+}
+#header div.navigation ul li a {
+	color: #800d35;
+	display: block;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 18px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #fce8ee;
+	text-transform: uppercase;
+}
+#header div.navigation ul li.selected a {
+	color: #d81b60;
+	font-weight: bold;
+}
+#header div.navigation ul li a:hover {
+	color: #d81b60;
+}
+
+#body .header {
+	background: #f7d6e0 url(../images/bg-content-bottom.gif) no-repeat bottom center;
+	margin: 0 0 40px 0;
+	padding: 5px 30px 33px;
+	text-align: center;
+	position: relative;
+}
+#body .header img {
+	display: block;
+	margin: 0 auto;
+}
+#body .body {
+	margin: 0;
+	padding: 0;
+}
+#body .body h2 {
+	background: url(../images/interface.png) no-repeat 0 -27px;
+	color: #800d35;
+	height: 62px;
+	line-height: 62px;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	text-shadow: 0 1px 0 #ffffff;
+	text-transform: uppercase;
+}
+#body .body h2 a {
+	color: #800d35;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 26px;
+	font-weight: bold;
+	letter-spacing: 3px;
+	margin: 0;
+	padding: 0 10px;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #ffffff;
+}
+#body .body h2 a:hover {
+	color: #a81238;
+}
+
+#body .body ul {
+	background: url(../images/interface.png) no-repeat 0 322px;
+	margin: 0;
+	overflow: hidden;
+	padding: 30px 0 62px;
+	list-style: none;
+}
+#body .body ul li {
+	float: left;
+	display: inline;
+	list-style: none;
+	margin: 0;
+	padding: 0 19px;
+	width: auto;
+}
+#body .body ul li a {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+#body .body ul li a:hover {
+	opacity: 0.8;
+}
+#body .body ul li a img {
+	border: 1px solid #f8bbd0;
+	display: block;
+}
+
+/* FOOTER / US & LETTERS BOXES ON INDEX PAGE */
+#body .footer {
+	margin: 0;
+	overflow: hidden;
+	padding: 60px 0 0;
+}
+#body .footer div {
+	background: url(../images/interface.png) no-repeat 0 -143px;
+	float: left;
+	height: 230px;
+	margin: 0;
+	overflow: hidden;
+	padding: 0 30px 10px;
+	width: 400px;
+	position: relative;
+}
+#body .footer div:first-child {
+	margin: 0 20px 0 0;
+}
+#body .footer div h3 {
+	line-height: 42px;
+	margin: 0 0 10px;
+	padding: 0;
+	text-align: center;
+}
+#body .footer div h3 a {
+	color: #800d35;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 22px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #ffffff;
+	text-transform: uppercase;
+	display: block;
+	line-height: 40px;
+}
+#body .footer div h3 a:hover {
+	color: #a81238;
+}
+#body .footer div img {
+	border: 2px solid #f8bbd0;
+	border-radius: 8px;
+	display: block;
+	float: left;
+	margin: 0 14px 0 0;
+	width: 120px;
+	height: 120px;
+	object-fit: cover;
+}
+#body .footer div p {
+	color: #7b4355;
+	font-size: 14px;
+	line-height: 20px;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+#body .footer div p a.more {
+	color: #d81b60;
+	font-weight: bold;
+	text-decoration: none;
+	display: block;
+	margin-top: 6px;
+}
+#body .footer div p a.more:hover {
+	text-decoration: underline;
+}
+
+/* GENERAL INNER PAGE CONTENT LAYOUT (ABOUT PAGE) */
+#body .content {
+	background: #f7d6e0 url(../images/bg-content-bottom.gif) no-repeat bottom center;
+	margin: 0;
+	min-height: 950px;
+	padding: 40px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	box-sizing: border-box;
+}
+
+#body .content .main-text {
+	width: 500px;
+	flex-shrink: 0;
+}
+#body .content .main-text h3 {
+	color: #880e4f;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 26px;
+	margin: 0;
+	padding: 20px 0 10px;
+	text-transform: uppercase;
+}
+#body .content .main-text h3:first-child {
+	padding-top: 0;
+}
+#body .content .main-text p {
+	color: #7b4355;
+	line-height: 26px;
+	margin: 0 0 15px 0;
+	padding: 0;
+	text-align: justify;
+}
+#body .content .main-text p a {
+	color: #7b4355;
+}
+#body .content .main-text p a:hover {
+	color: #ad1457;
+	text-decoration: underline;
+}
+
+#body .content .aside {
+	width: 360px;
+	flex-shrink: 0;
+	margin: 0;
+	padding: 0;
+}
+#body .content .aside img {
+	border-bottom: 1px solid #f48fb1;
+	border-top: 1px solid #ad1457;
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: auto;
+}
+
+/* BOOKS / MEMORIES PAGE LAYOUT */
+#body .content.books-page {
+	display: block;
+	min-height: 950px;
+	padding: 40px 50px 80px;
+}
+
+/* FEATURED Header Ribbon */
+#body .content.books-page h2 {
+	background: none;
+	color: #800d35;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 24px;
+	height: auto;
+	line-height: 38px;
+	margin: 0 auto 35px;
+	padding: 0;
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: none;
+	position: relative;
+	width: 100%;
+}
+
+#body .content.books-page h2::before,
+#body .content.books-page h2::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	width: 310px;
+	height: 1px;
+	background-color: #f48fb1;
+}
+#body .content.books-page h2::before {
+	left: 0;
+}
+#body .content.books-page h2::after {
+	right: 0;
+}
+
+/* Featured Block Section */
+#body .content.books-page .featured {
+	background: url(../images/interface.png) no-repeat 0 -384px;
+	margin: 0 0 40px 0;
+	padding: 0 0 35px 0;
+	overflow: hidden;
+}
+#body .content.books-page .featured > a {
+	float: left;
+	margin: 0 25px 0 0;
+}
+#body .content.books-page .featured > a img {
+	border: 1px solid #f8bbd0;
+	display: block;
+	width: 180px;
+	height: auto;
+}
+#body .content.books-page .featured div {
+	overflow: hidden;
+}
+#body .content.books-page .featured div h3 {
+	color: #880e4f;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 26px;
+	font-weight: normal;
+	line-height: 32px;
+	margin: 0 0 15px 0;
+	padding: 0;
+	text-transform: uppercase;
+}
+#body .content.books-page .featured div p {
+	color: #7b4355;
+	font-size: 14px;
+	line-height: 22px;
+	margin: 0;
+	padding: 0;
+	text-align: justify;
+}
+#body .content.books-page .featured div p b {
+	color: #000000;
+	display: block;
+	margin-bottom: 8px;
+}
+#body .content.books-page .featured div p a {
+	color: #800d35;
+	text-decoration: underline;
+}
+
+/* 2x2 GRID WITH IMAGE ON LEFT AND TEXT ON RIGHT (MATCHING IMAGE_97A9E5.JPG) */
+#body .content.books-page ul.article {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+}
+#body .content.books-page ul.article li {
+	float: left;
+	list-style: none;
+	margin: 0 0 35px 0;
+	width: 410px;             /* Half width for 2-column grid */
+	overflow: hidden;
+}
+#body .content.books-page ul.article li:nth-child(odd) {
+	margin-right: 40px;      /* Gap between left and right column */
+}
+#body .content.books-page ul.article li a {
+	float: left;
+	margin: 0 20px 0 0;      /* Margin pushing text to the right of the photo */
+}
+#body .content.books-page ul.article li a img {
+	border: 1px solid #f8bbd0;
+	display: block;
+	width: 160px;            /* Exact image dimensions matching original layout */
+	height: 160px;
+	object-fit: cover;
+	background-color: #ffffff;
+}
+#body .content.books-page ul.article li div {
+	overflow: hidden;        /* Wraps text strictly to the right side of the image */
+}
+#body .content.books-page ul.article li h3 {
+	color: #333333;
+	font-family: Georgia, serif;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 20px;
+	margin: 0 0 8px 0;
+	padding: 0;
+	text-transform: none;
+}
+#body .content.books-page ul.article li p {
+	color: #7b4355;
+	font-size: 13px;
+	line-height: 20px;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+/* FOOTER ICONS & COPYRIGHT */
+#footer {
+	margin: 0;
+	overflow: hidden;
+	padding: 44px 0 50px;
+}
+#footer ul {
+	float: left;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+}
+#footer ul li {
+	float: left;
+	list-style: none;
+	margin: 0 10px;
+	padding: 0;
+}
+#footer ul li a {
+	background: url(../images/icons.png) no-repeat;
+	display: block;
+	height: 24px;
+	margin: 0;
+	padding: 0;
+	text-indent: -9999px;
+	width: 30px;
+}
+#footer ul li.twitter a {
+	background-position: 0 0;
+}
+#footer ul li.twitter a:hover {
+	background-position: -35px 0;
+}
+#footer ul li.facebook a {
+	background-position: 0 -29px;
+}
+#footer ul li.facebook a:hover {
+	background-position: -35px -29px;
+}
+#footer ul li.googleplus a {
+	background-position: 0 -58px;
+}
+#footer ul li.googleplus a:hover {
+	background-position: -35px -58px;
+}
+#footer p {
+	color: #c28296;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	float: right;
+	margin: 0;
+	padding: 0 10px 0 0;
+	text-shadow: 0 2px 0 #fdeef2;
+}
